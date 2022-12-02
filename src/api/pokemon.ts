@@ -1,9 +1,14 @@
 import client from './client';
+import { PokemonResponse, PokemonsResponse } from '../@types/api';
 
-const getPokemons = async () => client.get("/pokemon");
+const getAllPokemons = async ():Promise<PokemonsResponse> => client.get("/pokemon?limit=500");
+
+const getPokemon = async (name: string):Promise<PokemonResponse> => client.get(`/pokemon/${name}`);
+
 
 const pokemonApi = {
-    getPokemons
+    getPokemon,
+    getAllPokemons,
 }
 
-export default pokemonApi;
+export default pokemonApi
