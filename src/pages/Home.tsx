@@ -1,15 +1,9 @@
-import {
-    useQuery,
-} from 'react-query'
 import { PokemonsResponseResult } from '../@types/api';
-
-import pokemonApi from "../api/pokemon";
+import { useApp } from '../states/AppState';
 import PokemonCard from '../components/PokemonCard';
 
 const Home: React.FC<{}> = () => {
-    const pokemons = useQuery("all-pokemons", () => {
-        return pokemonApi.getAllPokemons();
-    });
+    const { pokemons } = useApp();
 
     if(pokemons.isLoading) {
         return <div>loading</div>
@@ -19,7 +13,7 @@ const Home: React.FC<{}> = () => {
             <h1>Home</h1>
 
             {pokemons.data?.data.results.map((pokemon: PokemonsResponseResult) => (
-                <PokemonCard name={pokemon.name} />
+                <PokemonCard key={pokemon.name} name={pokemon.name} />
             ))}
         </div>
     )
