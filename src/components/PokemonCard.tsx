@@ -17,10 +17,12 @@ const PokemonCard: React.FC<PokemonCardProps> = ({name}) => {
             </div>
     }
 
+    const otherSprites = pokemon.data?.data.sprites.other;
+
     return (
         <Link to={`/${name}`} className="group bg-gray-50 border border-gray-100 rounded-lg p-4 transition transform space-y-8 hover:shadow hover:scale-105">
             <div className="w-full h-56 justify-center">
-            <img className="w-full h-full object-contain" src={pokemon.data?.data.sprites.other.dream_world.front_default}
+            <img className="w-full h-full object-contain" src={otherSprites?.dream_world.front_default || otherSprites?.["official-artwork"].front_default} 
              alt={pokemon.data?.data.name} />
             </div>
             <div className="font-medium capitalize text-gray-400 transition group-hover:text-gray-700">{pokemon.data?.data.name}</div>
