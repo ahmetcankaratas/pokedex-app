@@ -1,3 +1,10 @@
+export type Stat = {
+    base_stat: number;
+    stat: {
+        name: string;
+    }
+}
+
 export type PokemonsResponseResult = {
     name: string;
     url: string;
@@ -26,6 +33,7 @@ export type PokemonResponse = {
                 };
             }
         }
+        stats: Stat[];
     }
 
 }

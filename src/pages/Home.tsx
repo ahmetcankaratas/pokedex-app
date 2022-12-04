@@ -4,8 +4,8 @@ import { PokemonsResponseResult } from '../@types/api';
 
 import { useApp } from '../states/AppState';
 import PokemonCard from '../components/PokemonCard';
-import Header from "../components/Header";
 import Loader from "../components/Loader";
+import Layout from "../components/Layout";
 const Home: React.FC<{}> = () => {
     const { pokemons, filteredPokemons } = useApp();
 
@@ -15,15 +15,11 @@ const Home: React.FC<{}> = () => {
         </div>
     }
     return(
-        <div className="space-y-8">
-            <Header />
-
-            <main className="container mx-auto">
-            <div className="grid grid-cols-4 gap-8">
-            <h1>Home</h1>
-
+        <Layout>
+            <main className="container mx-auto px-6 lg:px-0 ">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {filteredPokemons?.map((pokemon: PokemonsResponseResult) => (
-                <InView key={pokemon.name} threshold={0.3} triggerOnce={true}>
+                <InView key={pokemon.name} rootMargin="200px 0px" threshold={0.3} triggerOnce={true}>
                     {({ inView, ref }) => {
                         return inView ? (
                             <PokemonCard name={pokemon.name} />
@@ -37,8 +33,7 @@ const Home: React.FC<{}> = () => {
             ))}
             </div>
             </main>
-
-        </div>
+        </Layout>
         
     )
 }
