@@ -2,7 +2,7 @@
 
 On the homepage users can view 1000+ pokemon card with included their name and picture like as pokedex. If the users want to see details on pokemon such as hp, attack , defense etc. skills, can click the pokemon card and see the pokemon details. We use Pokémon API to fetch pokemon information. 
 
-LiveURL: 
+LiveURL: http://pokedexapp-can.surge.sh/
 
 ## **🔎 Technologies**
 
@@ -13,9 +13,11 @@ LiveURL:
 ## 📷 Screenshots
 
 Main Page
+<img width="1439" alt="image" src="https://user-images.githubusercontent.com/53529387/205494837-e7228a67-086a-4015-890c-addefe6b4e9e.png">
 
 
 PokemonDetails
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/53529387/205494874-6ff22690-59d9-497e-b73d-1d21c0d1c704.png">
 
 
 ## Getting Started
